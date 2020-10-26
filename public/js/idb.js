@@ -7,7 +7,7 @@ const request = indexedDB.open('BW', 1);
 request.onupgradeneeded = function(event) {
     // save a reference to the database 
     const db = event.target.result;
-    // create an object store (table) called `new_pizza`, set it to have an auto incrementing primary key of sorts 
+    // create an object store (table) called `new_BWStore`, set it to have an auto incrementing primary key of sorts 
     db.createObjectStore('new_BWStore', { autoIncrement: true });
   };
 
@@ -67,7 +67,7 @@ function saveRecord(record) {
           }
           // open one more transaction
           const transaction = db.transaction(['new_BWStore'], 'readwrite');
-          // access the new_pizza object store
+          // access the new_BWStore object store
           const BWObjectStore = transaction.objectStore('new_BWStore');
           // clear all items in your store
           BWObjectStore.clear();

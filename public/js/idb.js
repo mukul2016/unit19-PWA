@@ -39,8 +39,17 @@ function saveRecord(record) {
     BWObjectStore.add(record);
   }
 
-  // upon a successful .getAll() execution, run this function
-getAll.onsuccess = function() {
+  function uploadBWData() {
+    // open a transaction on your db
+    const transaction = db.transaction(['new_BWStore'], 'readwrite');
+  
+    // access your object store
+    const BWObjectStore = transaction.objectStore('new_BWStore');
+  
+    // get all records from store and set to a variable
+    const getAll = BWObjectStore.getAll();
+    // upon a successful .getAll() execution, run this function
+    getAll.onsuccess = function() {
     // if there was data in indexedDb's store, let's send it to the api server
     if (getAll.result.length > 0) {
       fetch('/api/transaction/bulk', {

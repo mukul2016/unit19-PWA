@@ -3,7 +3,7 @@
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
 
 ## Description
-🔍budget tracker application to allow for offline access and functionality. The user is able to add expenses and deposits to their budget with or without a connection. If the user enters transactions offline, the total is updated when they're brought back online.
+🔍budget watcher/tracker application allows for offline access and functionality. The user is able to add expenses and deposits to their budget with or without a connection. If the user enters transactions offline, the total is updated when they're brought back online.
 
 ## Table of Contents
 - [Description](#description)
